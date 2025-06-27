@@ -1,0 +1,30 @@
+#define liquid_level A0
+
+#include <Wire.h>                       // 1602 LCD 라이브러리 세팅
+#include <LiquidCrystal_I2C.h>
+
+LiquidCrystal_I2C lcd(0x27, 16, 2);
+
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+  pinMode(liquid_level, INPUT);
+
+  lcd.init();                           // LCD 초기화
+  lcd.backlight();
+  lcd.clear();
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  int water = analogRead(liquid_level);
+  Serial.println(water);
+
+  lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print("sensor : ");
+  lcd.setCursor(9,0);
+  lcd.print(water);
+
+  delay(1000);
+}
