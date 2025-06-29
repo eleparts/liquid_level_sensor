@@ -7,8 +7,8 @@ LiquidCrystal_I2C lcd(0x27, 16, 2);
 
 void setup() {
   // put your setup code here, to run once:
-  Serial.begin(9600);
-  pinMode(liquid_level, INPUT);
+  Serial.begin(9600);                   // 시리얼 포트 시작
+  pinMode(liquid_level, INPUT);         // 수위센서 입력 모드 지정
 
   lcd.init();                           // LCD 초기화
   lcd.backlight();
@@ -17,10 +17,10 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  int water = analogRead(liquid_level);
+  int water = analogRead(liquid_level); // water 변수에 수위센서 아날로드 값을 저장합니다.
   Serial.println(water);
 
-  lcd.clear();
+  lcd.clear();                          // lcd에 센서값 출력하기
   lcd.setCursor(0,0);
   lcd.print("sensor : ");
   lcd.setCursor(9,0);
