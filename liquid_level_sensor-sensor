@@ -26,5 +26,5 @@ void loop() {
   lcd.setCursor(9,0);
   lcd.print(water);
 
-  delay(1000);
+  delay(1000);                          // 1초 동작 지연
 }
