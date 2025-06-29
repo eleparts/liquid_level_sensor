@@ -45,5 +45,5 @@ void loop() {
   lcd.setCursor(10,1);
   lcd.print(" / 8");
 
-  delay(1000);
+  delay(1000);                          // 1초 동작 지연
 }
