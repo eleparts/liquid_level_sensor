@@ -22,7 +22,7 @@ void loop() {
   int water = analogRead(liquid_level); // water 변수에 수위센서 아날로드 값을 저장
   Serial.println(water);
 
-  lcd.clear();                          // lcd에 센서값 출력하기
+  lcd.clear();                          // lcd에 센서값 출력
   lcd.setCursor(0,0);
   lcd.print("sensor : ");
   lcd.setCursor(9,0);
@@ -34,7 +34,7 @@ void loop() {
     water = 700;
   }
 
-  // 숫자(변수)를 한 범위에서 다른 범위로 비례 변환하는 map() 함수를 이용합니다.
+  // 숫자(변수)를 한 범위에서 다른 범위로 비례 변환하는 map() 함수를 이용
   int amount_of_water = map(water, minWater, maxWater, 0, 8);
   Serial.println(amount_of_water);
   
