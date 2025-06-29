@@ -17,7 +17,7 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  int water = analogRead(liquid_level); // water 변수에 수위센서 아날로드 값을 저장합니다.
+  int water = analogRead(liquid_level); // water 변수에 수위센서 아날로드 값을 저장
   Serial.println(water);
 
   lcd.clear();                          // lcd에 센서값 출력하기
