@@ -36,5 +36,5 @@ void loop() {
     lcd.print("Sunny");
   }
 
-  delay(1000);
+  delay(1000);                          // 1초 동작 지연
 }
