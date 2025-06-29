@@ -19,7 +19,7 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  int water = analogRead(liquid_level); // water 변수에 수위센서 아날로드 값을 저장합니다.
+  int water = analogRead(liquid_level); // water 변수에 수위센서 아날로드 값을 저장
   Serial.println(water);
 
   lcd.clear();                          // lcd에 센서값 출력하기
@@ -28,7 +28,7 @@ void loop() {
   lcd.setCursor(9,0);
   lcd.print(water);
 
-  if(water < 400){                 // 최솟값보다 작아지거나, 최댓값보다 커지면 지정한 값으로 초기화
+  if(water < 400){                      // 최솟값보다 작아지거나, 최댓값보다 커지면 지정한 값으로 초기화
     water = 400;
   }else if(water > 700){
     water = 700;
@@ -38,7 +38,7 @@ void loop() {
   int amount_of_water = map(water, minWater, maxWater, 0, 8);
   Serial.println(amount_of_water);
   
-  lcd.setCursor(0,1);                   // 8개의 범위로 나누어 어느정도 물이 찼는지 센서를 통해 확인합니다.
+  lcd.setCursor(0,1);                   // 센서값을 8개의 범위로 나누어 어느정도 물이 찼는지 확인
   lcd.print("Amount : ");
   lcd.setCursor(9, 1);
   lcd.print(amount_of_water);
